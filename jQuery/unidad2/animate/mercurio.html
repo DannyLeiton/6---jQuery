@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mercurio</title>
+<style>
+div{
+	position:absolute;
+	height:300px;
+	width:300px;
+	background-color:#B3D4FC;
+	border: 2px solid black;
+}
+</style>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+
+function inicio(){
+	$("#corre").click(onCorre);
+	//$("#regresa").click(onRegresa);
+	$("#detiene").click(onDetiene);
+}
+function onCorre(){
+	//$("div").animate({left:'0px'},5000);
+	//$("div").animate({top:'300px', opacity:0, left:'200px', height:'toggle'},2000, onRegresa);	
+	var d = $('div');
+	d.animate({height:'600px', opacity:0.2}, "slow", function(){alert("primera animación");});
+	d.animate({width:'1000px', opacity:0.8}, "slow");
+	d.animate({width:'300px', opacity:0.5}, "slow");
+	d.animate({height:'300px', opacity:1}, "slow");
+}
+function onRegresa(){
+	$("div").animate({top:'50px', opacity:1, left:'0px'},2000);	
+}
+function onDetiene(){
+	//$("div").stop();
+	//$("div").stop(true, true);
+	$("div").stop(true);	
+}
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="corre"/>
+<input type="button" id="regresa" value="regresa"/>
+<input type="button" id="detiene" value="detiene"/>
+<div>
+<!--<img src="imagenes/mercurio.jpg" width="201" height="251" id="mercurio">-->
+</div>
+<br>
+
+</body>
+</html>

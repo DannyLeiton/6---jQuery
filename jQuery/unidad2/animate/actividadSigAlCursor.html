@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+   <title>Animación</title>
+   <script src="jquery.js"></script>
+   <style>
+   div{
+	   width:20px;
+	   height:20px;
+	   border: 2px solid black;
+	   margin:10px;
+	   background:orange;
+	   position:absolute;
+   }
+   </style>
+   <script>
+	$(document).ready(inicio);
+	function inicio(){
+		$(document).click(function(event){
+			x = event.pageX;
+			y = event.pageY;
+			$("div").animate({left:x, top:y}, 1000);
+		});
+	}
+    </script>
+	</head>
+
+	<body>
+    <p>Haz clic sobre la página para que te siga el cuadro</p>
+    	<div>
+    		
+    	</div>
+	</body>
+</html>

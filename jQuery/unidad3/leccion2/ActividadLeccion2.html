@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+   <title>Atributo</title>
+   <style>
+   .muy{
+	   font-size:46px;
+	   color:red;
+   }
+   .grande{
+	   font-size:26px;
+	   color:blue;
+   }
+   .normal{
+	   font-size:16px;
+	   color:black;
+   }
+   
+   </style>
+   <script src="js/jquery.js"></script>
+   <script>
+	$(document).ready(inicio);
+	function inicio(){
+		$("#muy").click(function(event){
+			$('p').removeClass('grande');
+			$('p').removeClass('normal');
+			$('p').addClass('muy');
+		});
+		$("#grande").click(function(event){
+			$('p').removeClass('muy');
+			$('p').removeClass('normal');
+			$('p').addClass('grande');
+		});
+		$("#normal").click(function(event){
+			$('p').removeClass('grande');
+			$('p').removeClass('muy');
+			$('p').addClass('normal');
+		});
+	}
+    </script>
+	</head>
+
+	<body>
+    <button id="muy">Muy grande</button>
+    <button id="grande">Grande</button>
+    <button id="normal">Normal</button>
+    <p><cite>“No me preocupa tanto la gente mala, sino el espantoso silencio de la gente buena”</cite> Martin Luther King</p>
+	</body>
+</html>

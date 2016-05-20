@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+   <title>Atributo</title>
+   <script src="js/jquery.js"></script>
+   <script>
+	$(document).ready(inicio);
+	var w = 200;
+	function inicio(){
+		$("#agrandar").click(function(event){
+			w+=20;
+			$('img').animate({width:w});		
+		});
+		$("#reducir").click(function(event){
+			w-=20;
+			$('img').animate({width:w});		
+		});
+	}
+    </script>
+	</head>
+
+	<body>
+    <button id="agrandar">Agrandar</button><button id="reducir">Reducir</button>
+    <div>
+    <img src="imagenes/afrodita.jpg" width="200"/>
+    </div>
+	</body>
+</html>

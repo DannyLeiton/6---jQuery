@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dimensiones de la caja</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(inicio);
+function inicio(){	
+	$("#grande").click(function(){
+		$('div').width(1200).height(750);
+	});
+	$("#mediana").click(function(){
+		$('div').width(800).height(500);
+	});
+	$("#chica").click(function(){
+		$('div').width(400).height(250);
+	});
+}
+</script>
+</head>
+
+<body>
+<input type="button" id="chica" value="Chica">
+<input type="button" id="mediana" value="Mediana">
+<input type="button" id="grande" value="Grande">
+<br>
+<div>
+<img id="afro" src="imagenes/afrodita2.jpg"/>
+</div>
+<p></p>
+</body>
+</html>

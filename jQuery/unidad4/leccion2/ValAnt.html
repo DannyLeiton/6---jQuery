@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Val</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#poema1").click(onPoema1);
+	$("#poema2").click(onPoema2);
+});
+function onPoema1(){
+	$("div").load("textos/poema1.txt h2", onLoadHandler); //callBack	
+}
+function onPoema2(){
+	//$("div").load("textos/poema2.txt #autor");
+	$("div").load("textos/poemaX.txt #autor", onLoadHandler);	
+}
+function onLoadHandler(answer, status, xhr){
+	if(status=="success") alert("Successful load! "+answer);
+	
+	if(status=="error") alert("Wrong load! "+xhr.status+" "+xhr.statusText);
+}
+</script>
+</head>
+
+<body>
+<button id="poema1">Poema 1</button>
+<button id="poema2">Poema 2</button>
+<div>
+	
+</div>
+</body>
+</html>

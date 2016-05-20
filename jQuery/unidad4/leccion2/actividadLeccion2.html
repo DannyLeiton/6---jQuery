@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cargar archivo con load</title>
+<style>
+body{
+	width:70%;
+	margin:30px auto;
+	text-align:center;	
+}
+.cuadro{
+	width:70%;
+	margin:30px auto;
+	border: 2px solid black;
+	padding:20px;
+	text-align:justify;
+}
+</style>
+<script src="jquery.js"></script>
+<script>
+$(document).ready(inicio);
+function inicio(){	
+	$("#primera").click(function(){		
+		$('div').load('textos/primera.txt', onLoadHandler);
+	});
+	$("#segunda").click(function(){
+		$('div').load('textos/segunda.txt', onLoadHandler);
+	});
+	$("#tercera").click(function(){
+		$('div').load('textos/.txt', onLoadHandler);//Error a drede.
+	});
+}
+
+function onLoadHandler(response, status, xhr){
+	if(status=='success'){
+		$('div').html('<h1>Great! '+xhr.status+':('+xhr.statusText+')</h1>');
+	}
+	else if(status=='error'){
+		$('div').html('<h1>Error! '+xhr.status+':('+xhr.statusText+')</h1>');
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" id="primera" value="Primera generación">
+<input type="button" id="segunda" value="Segunda generación">
+<input type="button" id="tercera" value="Tercera generación">
+<p>Pulsa un botón para leer la generación de dioses griegos</p>
+<div>
+
+</div>
+</body>
+</html>

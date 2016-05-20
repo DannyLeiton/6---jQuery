@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Poema CSS</title>
+<style>
+.texto{
+	text-align:center;
+}
+.rojo{
+	color:red;
+}
+.autor{
+	text-align:right;
+	font-style:italic;
+	color:black;
+}
+.caja{
+	width:400px;
+	background-color:#ff9;
+	border:black solid 2px;
+	padding:20px;
+	height:200px;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){	
+	$("#cajaBtn").click(onCaja);
+	$("#autorBtn").click(onAutor);
+	$("#textoBtn").click(onTexto);
+	$("#borrarBtn").click(onBorrar);
+	$("#borrarRojoBtn").click(onBorrarRojo);
+}
+function onCaja(){
+	$("div").addClass("caja");
+}
+function onAutor(){
+	$("#autor").addClass("autor");
+}
+function onTexto(){
+	$("p").addClass("texto rojo");
+}
+
+function onBorrarRojo(){
+	$('p').removeClass('rojo');
+};
+
+function onBorrar(){
+	$("p").removeClass("texto rojo");
+	$("#autor").removeClass("autor");
+	$("div").removeClass("caja");
+}
+</script>
+</head>
+
+<body> 
+<div>
+<p>En el agua clara</p>
+<p>Que brota en la fuente</p>
+<p>Un lindo pescado</p>
+<p>Sale de repente</p>
+<p id="autor">Autor: anónimo</p>
+</div>
+<input type="button" value="Estilo Caja" id="cajaBtn">
+<input type="button" value="Estilo Texto" id="textoBtn">
+<input type="button" value="Estilo Autor" id="autorBtn">
+<input type="button" value="Borrar Estilo" id="borrarBtn">
+<input type="button" value="Borrar Rojo" id="borrarRojoBtn">
+</body>
+</html>

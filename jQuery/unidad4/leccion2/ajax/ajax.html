@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){	
+	$("#popular").click(function(){
+		onLeePoema("0");
+	});
+	$("#clasico").click(function(){
+		onLeePoema("1");
+	});
+	$("#romantico").click(function(){
+		onLeePoema("2");
+	});
+}
+function onLeePoema(tipo){
+	$.ajax({
+		async:true,
+		type:'POST',
+		dataType:'html',
+		contentType:'application/x-www-form-urlencoded',
+		url:'poemaPOST.php',
+		data:'poema='+tipo,
+		beforeSend: inicioEnvio,
+		success: llegadaEnvio,
+		timeout:4000,
+		error: errorEnvio
+	});	
+} 
+function inicioEnvio(){
+		$('div').text('Cargando info...');
+}
+function llegadaEnvio(data){
+		$('div').html(data);
+}
+function errorEnvio(){
+		$('div').text('Error cargando info...');
+}
+</script>
+</head>
+
+<body>
+<button id='popular'>Poema popular</button>
+<button id='clasico'>Poema clásico</button>
+<button id='romantico'>Poema romántico</button>
+<div>	
+</div>
+</body>
+</html>

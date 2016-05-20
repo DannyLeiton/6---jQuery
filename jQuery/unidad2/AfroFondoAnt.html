@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Afro Fondo</title>
+		<style>
+			#afrodita{
+				width:800px;
+				height:502px;
+				background-image:url(imagenes/atenea.jpg);
+				background-repeat:no-repeat;
+				background-size:100%;
+				display:none;
+			}
+			
+			#encabezado{
+				width:800px;
+				text-align:center;
+				background-color:#e5eec;
+				border:solid 1px #c3c3c3;
+			}
+			
+			/*div{
+			   width:200px;
+			   height:200px;
+			   border: 2px solid black;
+			   margin:10px;
+		 }*/
+		</style>
+		<script src="js/jquery-1.12.1.js"></script>
+		<!--<script src="js/myjQueryTraining.js"></script>-->
+		<script type="text/javascript">
+			$(document).ready(iniciar);
+			
+			function iniciar(){
+			    /*$("#afrodita").mouseenter(onEnter);
+			    $("#afrodita").mouseleave(onLeave);
+			    $("#afrodita").dblclick(onDblClick);
+			    $("#afrodita").mousedown(onMouseDown);
+			    $("#afrodita").mouseup(onMouseUp);*/
+			    //fun 1, entrada. fun 2, salida.
+		   		/*$("#afrodita").hover(function(){
+					$("#afrodita").css("background-image","url(imagenes/damocles.jpg)");
+		   		},
+		   		function(){
+		   			$("#afrodita").css("background-image","url(imagenes/atenea.jpg)");
+		   		}
+		   		);	
+				$("input").focus(function(){
+					$(this).css("background-color","yellow");
+				});
+				$("input").blur(function(){
+					$(this).css("background-color","white");
+				});*/
+				/*$("input").keydown(function(){
+					$(this).css("background-color","green");
+				});
+				
+				$("input").keyup(function(){
+					$(this).css("background-color","red");
+				});
+				
+				 $("div").hover(cambiaColor); 
+				 
+				 $("#show").click(function(){
+					$("#afrodita").show(2000);//2s
+				});
+				
+				$("#hide").click(function(){
+					$("#afrodita").hide(5000);//5s
+				});
+				
+				$("#toggle").click(function(){
+					$("#afrodita").toggle(2000);//5s
+				}); 
+				$("#fadein").click(onFadeIn);//5s
+			
+				$("#fadeout").click(onFadeOut);*/
+				
+				$("#encabezado").click(onMuestra);
+				
+			}
+			
+			/*
+			function onFadeIn(){
+				//$("#afrodita").fadeIn(2000); //Se desvanece uniformemente
+				//$("#afrodita").fadeIn("slow");
+				//$("#afrodita").fadeTo("slow", 1);
+				$("#afrodita").fadeToggle("slow");
+			}
+			
+			function onFadeOut(){
+				//$("#afrodita").fadeOut("slow");//slow, fast
+				$("#afrodita").fadeTo("slow", 0.2);
+			}
+			
+			function cambiaColor(){
+				r = Math.floor(Math.random()*255);
+				g = Math.floor(Math.random()*255);
+				b = Math.floor(Math.random()*255);
+				color = "rgb("+r+", "+g+", "+b+")";
+				$(this).css("background-color",color);
+			}		
+			function onEnter(){
+				$("#afrodita").css("background-image","url(imagenes/damocles.jpg)");	
+			}
+			function onLeave(){
+				$("#afrodita").css("background-image","url(imagenes/atenea.jpg)");	
+			}
+			function onDblClick(){
+				$("#afrodita").css("background-image","url(imagenes/hercules.jpg)");	
+			}
+			function onMouseDown(){
+				$("#afrodita").css("background-image","url(imagenes/poseidon160x196.jpg)");	
+			}function onMouseUp(){
+				$("#afrodita").css("background-image","url(imagenes/diogenes.jpg)");	
+			}*/
+			
+			function onMuestra(){
+				//$("#afrodita").slideDown("slow");
+				//$("#afrodita").slideUp("slow");
+				$("#afrodita").slideToggle("slow");
+			}
+		</script>
+	</head>
+	<body>
+		<div id ="encabezado">
+			Atenea (Siglo XIV)
+		</div>
+		<div id="afrodita">
+		</div>
+		<!--<form>
+			<table>
+				<tr>
+					<td>Nombre:</td>
+					<td>
+						<input type="text" name="nombre" id="nombre"/>						
+					</td>
+				</tr>
+				<tr>
+					<td>Apellidos:</td>
+					<td>
+						<input type="text" name="apellidos" id="apellidos"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td>
+						<input type="text" name="email" id="email"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+					</td>
+					<td>
+						<input type="submit" name="submit" id="submit"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div>
+			Mete y saca
+		</div>
+		<div>
+			<input type="button" name="show" id="show" value="SHOW"/>
+			<input type="button" name="hide" id="hide" value="HIDE"/>
+		</div>
+		<input type="button" name="hide" id="toggle" value="TOGGLE"/>
+		<input type="button" id="fadein" value="fadein"/>
+		<input type="button" id="fadeout" value="fadeout"/>-->		
+	</body>
+</html>

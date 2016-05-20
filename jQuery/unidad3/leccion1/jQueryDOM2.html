@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+   <title>Animación</title>
+   <script src="js/jquery.js"></script>
+   <style>
+   div{
+	   width:20px;
+	   height:20px;
+	   border: 2px solid black;
+	   margin:10px;
+	   background:orange;
+	   position:absolute;
+   }
+   </style>
+   <script>
+	$(document).ready(inicio);
+	function inicio(){
+		$("select").change(onSelect);
+	}
+
+	function onSelect(){
+		var unValor = $("#idiomaNatal").val();
+		var variosValores = $('#otrosIdiomas').val() || [];
+		$("p").text($("p").text()+unValor+", "+variosValores.join(", ")+", ");
+	}
+	
+    </script>
+	</head>
+	<body>
+	<p>
+		Valores Seleccionados:
+	</p>
+	<br>
+    <select id='idiomaNatal'>
+    	<option>Español</option>
+    	<option>Inglés</option>
+    	<option>Francés</option>
+    	<option>Alemán</option>
+    </select>
+    <select id="otrosIdiomas" multiple>
+    	<option>Español</option>
+    	<option>Inglés</option>
+    	<option>Francés</option>
+    	<option>Alemán</option>
+    </select>
+	</body> 
+</html>

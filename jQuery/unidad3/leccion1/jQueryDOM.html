@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+   <title>Animación</title>
+   <script src="js/jquery.js"></script>
+   <style>
+   div{
+	   width:20px;
+	   height:20px;
+	   border: 2px solid black;
+	   margin:10px;
+	   background:orange;
+	   position:absolute;
+   }
+   </style>
+   <script>
+	$(document).ready(inicio);
+	function inicio(){
+		$("#pregunta").click(onPregunta);
+		$("#respuesta").click(onRespuesta);
+		$("#ventana").click(onVentana);
+		$("p").click(getHTML);
+		$("#cambio").click(onCambio);
+		$("#nombre").val("");//Clear the input
+		$("#nombre").keyup(enMayus);
+	}
+	function enMayus(){
+		var nom = $("#nombre").val();
+		$("#nombre").val(nom.toUpperCase());
+	}
+	function onPregunta(){
+		$("#texto").text("¿Quién pintó el nacimiento de Venus?");
+	}
+	function onRespuesta(){
+		$("#texto").text("Sandro Bottichelli (1445 - 1510) en 1484.");
+	}
+	function onVentana(){
+		var contenido = $("#texto").text();
+		alert(contenido);
+	}
+	function getHTML(){
+		var html = $(this).html();
+		$(this).text(html);
+	}
+	function onCambio(){
+		var img = $("img").attr("Title");
+		$("#afrodita").text("Bottichelli");
+		var texto = $("#afrodita").text();
+		$("#texto").text(img);
+		$("img").attr({title:texto, width:'160px', height:'160px'});
+	}
+    </script>
+	</head>
+
+	<body>
+    <p id="texto" >¿Quién pintó el nacimiento de Venus? <input type="checkbox"/></p>
+    	<input type="button" value="Pregunta" id="pregunta"/>
+    	<input type="button" value="Respuesta" id="respuesta"/>
+    	<input type="button" value="Contenido" id="ventana"/><br>
+    	<input type="button" value="Cambio " id="cambio"/><br>
+    	<img src="imagenes/mercurio.jpg" title="Afrodita" id="afrodita"/>
+    	<input type="text" id="nombre" name="nombre" value="Eustacio"/>
+	</body> 
+</html>
